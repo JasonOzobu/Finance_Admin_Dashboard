@@ -1,0 +1,73 @@
+.login {
+	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.logincard {
+	overflow: hidden;
+	min-width: 300px;
+	display: flex;
+	flex-direction: column;
+	border: 1px solid #000;
+	border-radius: 20px;
+	padding: 20px 30px;
+}
+.login::-webkit-scrollbar {
+	overflow: hidden;
+}
+.logincard h1 {
+	position: relative;
+	text-align: center;
+	font-weight: 600;
+	margin-bottom: 40px;
+}
+.logincard h1::after {
+	content: ' ';
+	width: 35px;
+	height: 3px;
+	background: #000;
+	border-radius: 50px;
+	position: absolute;
+	bottom: -10px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+.logincard_inputfield {
+	display: flex;
+	flex-direction: column;
+	gap: 3px;
+	margin-bottom: 15px;
+}
+.logincard_inputfield label {
+	font-size: 17px;
+}
+.logincard_inputfield input {
+	outline: none;
+	padding: 10px;
+	font-size: 15px;
+	border-radius: 5px;
+	border: 1px solid #000;
+	color: rgb(63, 62, 62);
+}
+.logincard button {
+	padding: 15px;
+	margin: 20px 0 10px;
+	background: black;
+	color: white;
+	font-size: 17px;
+	outline: none;
+	border: none;
+	border-radius: 50px;
+	cursor: pointer;
+	width: 100%;
+}
+.logincard p {
+	text-align: center;
+}
+.logincard p > span {
+	color: blue;
+	cursor: pointer;
+}

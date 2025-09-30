@@ -1,0 +1,20 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.slide-left {
+	-webkit-animation: slide-left 0.5s;
+	animation: slide-left 0.5s;
+}
+@keyframes slide-left {
+	0% {
+		-webkit-transform: translateX(-25%);
+		transform: translateX(-25%);
+	}
+	100% {
+		-webkit-transform: translateX(0);
+		transform: translateX(0);
+	}
+}

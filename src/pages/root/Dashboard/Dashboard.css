@@ -1,0 +1,131 @@
+.dashboard {
+	display: flex;
+}
+.dashboard_layout {
+	overflow-y: auto;
+	width: 100%;
+	min-height: 100vh;
+	background: #000;
+	padding: 30px;
+	color: white;
+}
+.dashboard_menu img {
+	filter: invert(100%);
+	width: 25px;
+	margin-bottom: 20px;
+	cursor: pointer;
+}
+.dashboard_header {
+	margin-bottom: 25px;
+}
+.dashboard_header p {
+	font-size: 16px;
+	margin-top: 3px;
+	color: rgb(102, 101, 101);
+}
+.dashboard_charts {
+	display: flex;
+	gap: 30px;
+}
+.dashboard_charts-details {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px;
+}
+.dashboard_chartbox {
+	min-width: 220px;
+	border-radius: 10px;
+	background: rgb(20, 19, 19);
+	padding: 10px;
+}
+.dashboard_chartbox-title {
+	display: flex;
+	align-items: center;
+	margin-bottom: 10px;
+}
+.dashboard_chartbox-title img {
+	width: 28px;
+	margin-right: 10px;
+}
+.dashboard_chartbox-title p {
+	color: rgb(102, 101, 101);
+	font-size: 17px;
+	font-weight: 500;
+}
+.dashboard_chartbox-amount {
+	font-size: 26px;
+	font-family: 'Courier New', Courier, monospace;
+	font-weight: 600;
+	margin-bottom: 5px;
+}
+.dashboard_chartbox-percentage {
+	display: flex;
+	gap: 10px;
+	border-bottom: 1px solid rgb(82, 79, 79);
+	padding-bottom: 15px;
+}
+.dashboard_chartbox-percentage p {
+	font-size: 14px;
+}
+.dashboard_chartbox-percentage .green {
+	color: rgb(11, 231, 48);
+}
+.dashboard_chartbox-percentage .red {
+	color: red;
+}
+.dashboard_chartbox-percentage p:last-child {
+	color: rgb(102, 101, 101);
+}
+.dashboard_chartbox-report {
+	display: flex;
+	align-items: center;
+	padding: 15px 0 0;
+	gap: 5px;
+	cursor: pointer;
+}
+.arrow {
+	width: 15px;
+	filter: invert(100%);
+	transform: rotate(180deg);
+}
+.dashboard_charts-graph {
+	width: 100%;
+	border-radius: 10px;
+	background: rgb(20, 19, 19);
+	padding: 15px;
+	max-height: 340px;
+}
+.dashboard_charts-graph p {
+	color: rgb(102, 101, 101);
+	font-size: 18px;
+	font-weight: 500;
+}
+.dashboard_charts-graph h1 {
+	font-size: 35px;
+	font-family: 'Courier New', Courier, monospace;
+	font-weight: 600;
+	margin: 5px 5px 10px 0;
+}
+.dashboard_charts-graph .green {
+	color: rgb(11, 231, 48);
+}
+@media screen and (max-width: 1025px) {
+	.dashboard_charts-graph {
+		max-width: 460px;
+	}
+}
+@media screen and (max-width: 999px) {
+	.dashboard_charts {
+		flex-direction: column;
+	}
+}
+@media screen and (max-width: 510px) {
+	.dashboard_chartbox {
+		min-width: 200px;
+	}
+}
+@media screen and (max-width: 320px) {
+	.dashboard_chartbox {
+		min-width: 100%;
+	}
+}
