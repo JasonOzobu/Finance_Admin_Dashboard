@@ -23,7 +23,7 @@ const SignUp = () => {
 
 		if (res.ok) {
 			alert('Signup successful!');
-			navigate('/'); // go to homepage
+			navigate('/'); // go to dashboard
 		} else {
 			alert(data.message || 'Signup failed');
 		}

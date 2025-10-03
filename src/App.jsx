@@ -1,10 +1,10 @@
 import { Route, Routes } from 'react-router-dom';
 import Dashboard from './pages/root/Dashboard/Dashboard';
 import Transactions from './pages/root/Transactions/Transactions';
-import ProtectedRoute from './components/ProtectedRoute';
+import CreateTransaction from './pages/root/CreateTransaction/CreateTransaction';
 import SignIn from './pages/auth/Sign-in/Sign-in';
 import SignUp from './pages/auth/Sign-up/Sign-up';
-import HomePage from './pages/root/HomePage/HomePage';
+import ProtectedRoute from './components/ProtectedRoute';
 
 const App = () => {
 	return (
@@ -12,14 +12,6 @@ const App = () => {
 			<Routes>
 				<Route
 					path="/"
-					element={
-						<ProtectedRoute>
-							<HomePage />
-						</ProtectedRoute>
-					}
-				/>
-				<Route
-					path="/dashboard"
 					element={
 						<ProtectedRoute>
 							<Dashboard />
@@ -31,6 +23,14 @@ const App = () => {
 					element={
 						<ProtectedRoute>
 							<Transactions />
+						</ProtectedRoute>
+					}
+				/>
+				<Route
+					path="/create"
+					element={
+						<ProtectedRoute>
+							<CreateTransaction />
 						</ProtectedRoute>
 					}
 				/>
