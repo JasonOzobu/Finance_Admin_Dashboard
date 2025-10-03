@@ -14,7 +14,7 @@ const Sidebar = () => {
 	const { toggleMenu, toggleSidebar } = useContext(globalContext);
 
 	const navLinks = [
-		{ id: 'dashboard', label: 'Dashboard', url: '/dashboard' },
+		{ id: 'dashboard', label: 'Dashboard', url: '/' },
 		{ id: 'transactions', label: 'Transactions', url: '/transactions' },
 	];
 
