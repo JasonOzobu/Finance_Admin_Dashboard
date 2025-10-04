@@ -1,4 +1,5 @@
 import Sidebar from '../../../components/Sidebar/Sidebar';
+import menu from '../../../assets/menu_icon.png';
 import { globalContext } from '../../../context/GlobalState';
 import { useContext } from 'react';
 import './Dashboard.css';
@@ -13,7 +14,7 @@ const Dashboard = () => {
 			<div className="dashboard_layout">
 				{!toggleMenu && (
 					<div className="dashboard_menu">
-						<img src={'/assets/menu_icon.png'} alt="" onClick={toggleSidebar} />
+						<img src={menu} alt="" onClick={toggleSidebar} />
 					</div>
 				)}
 
