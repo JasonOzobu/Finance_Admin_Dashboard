@@ -15,7 +15,8 @@ const Sidebar = () => {
 
 	const navLinks = [
 		{ id: 'dashboard', label: 'Dashboard', url: '/' },
-		{ id: 'transactions', label: 'Transactions', url: '/transactions' },
+		{ id: 'transactions', label: 'Transactions', url: '/transactions' }	
+		, { id: 'create', label: 'Create', url: '/create' }
 	];
 
 	const logout = () => {
@@ -32,16 +33,17 @@ const Sidebar = () => {
 			{toggleMenu ? (
 				<div className="sidebar">
 					<div className="sidebar_top">
-						<Link to={'/'} className="heading">
+						<div className="heading">
+							<Link to={'/'}> 
 							<img src={logo} className="logo" alt="logo" />
+						</Link>
 							<img
 								src={cancel}
 								alt="cancel"
 								onClick={toggleSidebar}
 								className="cancel"
 							/>
-						</Link>
-
+</div>
 						<ul>
 							{navLinks.map((item) => {
 								return (

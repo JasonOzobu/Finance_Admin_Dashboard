@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './CreateTransaction.css';
+import Sidebar from '../../../components/Sidebar/Sidebar';
 
 const CreateTransaction = () => {
 	// const [transaction, setTransaction] = useState({});
@@ -35,6 +36,8 @@ const CreateTransaction = () => {
 	};
 
 	return (
+		<div className='create-container'>
+			<Sidebar />
 		<div className="create">
 			<h2>Create Transaction</h2>
 			<div className="createbox">
@@ -87,6 +90,7 @@ const CreateTransaction = () => {
 				}}>
 				Go Back
 			</Link>
+		</div>
 		</div>
 	);
 };
