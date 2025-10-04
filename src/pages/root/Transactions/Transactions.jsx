@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 const Transactions = () => {
 	const navigate = useNavigate();
 	const [transactions, setTransactions] = useState([]);
+	const { toggleMenu, toggleSidebar } = useContext(globalContext);
 
 	useEffect(() => {
 		const fetchTransactions = async () => {
