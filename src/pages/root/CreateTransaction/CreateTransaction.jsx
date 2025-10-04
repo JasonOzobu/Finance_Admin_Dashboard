@@ -10,12 +10,15 @@ const CreateTransaction = () => {
 	const navigate = useNavigate();
 
 	const createTransaction = async (e) => {
-		e.preventDefault();
+		const token = localStorage.getItem('token');
+		e?.preventDefault();
 
 		const res = await fetch('https://chidubem-be.onrender.com/api/transactions/send', {
 			method: 'POST',
-			headers: { 'Content-Type': 'application/json' },
-			body: JSON.stringify({ user, descrition, amount }),
+			headers: { 
+				Authorization: `Bearer ${token}`,
+				'Content-Type': 'application/json' },
+			body: JSON.stringify({ receiverUsername:user, description:descrition, amount }),
 		});
 		const data = await res.json();
 		console.log(data);
@@ -67,7 +70,7 @@ const CreateTransaction = () => {
 						/>
 					</div>
 
-					<button type="submit" onClick={() => createTransaction()}>
+					<button type="submit">
 						Create
 					</button>
 				</form>
