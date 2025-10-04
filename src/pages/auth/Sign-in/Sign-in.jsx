@@ -5,6 +5,7 @@ import './Sign-in.css';
 const SignIn = () => {
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
+	const [loading, setLoading] = useState(false);
 
 	const navigate = useNavigate();
 
@@ -19,18 +20,25 @@ const SignIn = () => {
 		});
 
 		const data = await res.json();
+		try {
+			setLoading(true);
 
-		if (res.ok && data.token) {
-			localStorage.setItem('token', data.token); // save JWT
-			navigate('/');
-		} else {
-			alert(data.message || 'Login failed');
+			if (res.ok && data.token) {
+				localStorage.setItem('token', data.token); // save JWT
+				navigate('/');
+			} else {
+				alert(data.message || 'Login failed');
+			}
+		} catch (error) {
+			console.log(error);
+		} finally {
+			setLoading(false);
 		}
 	};
 	return (
 		<div className="login">
 			<div className="logincard">
-				<h1>Sign In</h1>
+				<h2>Sign In</h2>
 
 				<form onSubmit={handleLogin}>
 					<div className="logincard_inputfield">
@@ -53,7 +61,9 @@ const SignIn = () => {
 						/>
 					</div>
 
-					<button type="submit">Sign In</button>
+					<button className="btn" type="submit">
+						{loading ? 'Signing...' : 'Sign In'}
+					</button>
 				</form>
 				<p>
 					Don't have an acouunt?{' '}

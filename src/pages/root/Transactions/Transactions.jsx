@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react';
 import Sidebar from '../../../components/Sidebar/Sidebar';
 import './Transactions.css';
+import { useNavigate } from 'react-router-dom';
 
 const Transactions = () => {
+	const navigate = useNavigate();
 	const [transactions, setTransactions] = useState([]);
 
 	useEffect(() => {
@@ -21,7 +23,6 @@ const Transactions = () => {
 				console.error(data.message);
 			}
 		};
-
 		fetchTransactions();
 	}, []);
 
@@ -29,15 +30,22 @@ const Transactions = () => {
 		<div className="transactions">
 			<Sidebar />
 			<div className="transactions_layout">
-				<div>Transactions: </div>
+				<div>Transactions </div>
 
 				<div className="trans_content">
-					{!transactions.data ? (
-						<p className="text">No transaction, kindly create one</p>
+					{transactions?.data?.length === 0 ? (
+						<p className="text">
+							No transaction, kindly{' '}
+							<span
+								style={{ color: 'blue', cursor: 'pointer' }}
+								onClick={() => navigate('/create')}>
+								create one
+							</span>
+						</p>
 					) : (
 						<div>
 							{transactions?.data?.map((transaction) => (
-								<span>{transaction}</span>
+								<span>{transaction.amount}</span>
 							))}
 						</div>
 					)}

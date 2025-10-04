@@ -1,0 +1,54 @@
+.create {
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+.create h2 {
+	margin-bottom: 15px;
+	font-weight: 600;
+	font-size: 20px;
+}
+.createbox {
+	overflow: hidden;
+	min-width: 300px;
+	display: flex;
+	flex-direction: column;
+	border: 1px solid #000;
+	border-radius: 25px 20px;
+	padding: 30px;
+}
+.create::-webkit-scrollbar {
+	overflow: hidden;
+}
+.createbox_inputfield {
+	display: flex;
+	flex-direction: column;
+	gap: 3px;
+	margin-bottom: 15px;
+}
+.createbox_inputfield label {
+	font-size: 15px;
+}
+.createbox_inputfield input {
+	outline: none;
+	padding: 10px;
+	font-size: 13px;
+	border-radius: 5px;
+	border: 1px solid #000;
+	color: #000;
+}
+.createbox button {
+	padding: 15px;
+	margin: 20px 0 10px;
+	background: black;
+	color: white;
+	font-size: 17px;
+	outline: none;
+	border: none;
+	border-radius: 50px;
+	cursor: pointer;
+	width: 100%;
+}

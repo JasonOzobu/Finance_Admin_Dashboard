@@ -6,6 +6,7 @@ const SignUp = () => {
 	const [username, setUsername] = useState('');
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
+	const [loading, setLoading] = useState(false);
 
 	const navigate = useNavigate();
 
@@ -20,12 +21,21 @@ const SignUp = () => {
 		});
 
 		const data = await res.json();
+		console.log(data);
 
-		if (res.ok) {
-			alert('Signup successful!');
-			navigate('/'); // go to dashboard
-		} else {
-			alert(data.message || 'Signup failed');
+		try {
+			setLoading(true);
+
+			if (res.ok) {
+				alert('Signup successful!');
+				navigate('/'); // go to dashboard
+			} else {
+				alert(data.message || 'Signup failed');
+			}
+		} catch (error) {
+			console.log(error);
+		} finally {
+			setLoading(false);
 		}
 	};
 
@@ -33,7 +43,7 @@ const SignUp = () => {
 		<div>
 			<div className="login">
 				<div className="logincard">
-					<h1>Sign Up</h1>
+					<h2>Sign Up</h2>
 
 					<form onSubmit={handleSignUp}>
 						<div className="logincard_inputfield">
@@ -66,7 +76,9 @@ const SignUp = () => {
 							/>
 						</div>
 
-						<button type="submit">Sign Up</button>
+						<button className="btn" type="submit">
+							{loading ? 'Signing...' : 'Sign Up'}
+						</button>
 					</form>
 					<p>
 						Already have an acouunt?{' '}

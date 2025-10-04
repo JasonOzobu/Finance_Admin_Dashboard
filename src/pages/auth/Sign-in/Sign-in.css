@@ -12,26 +12,26 @@
 	display: flex;
 	flex-direction: column;
 	border: 1px solid #000;
-	border-radius: 20px;
-	padding: 20px 30px;
+	border-radius: 25px 20px;
+	padding: 30px;
 }
 .login::-webkit-scrollbar {
 	overflow: hidden;
 }
-.logincard h1 {
+.logincard h2 {
 	position: relative;
 	text-align: center;
 	font-weight: 600;
-	margin-bottom: 40px;
+	margin-bottom: 20px;
 }
-.logincard h1::after {
+.logincard h2::after {
 	content: ' ';
-	width: 35px;
+	width: 30px;
 	height: 3px;
 	background: #000;
 	border-radius: 50px;
 	position: absolute;
-	bottom: -10px;
+	bottom: -8px;
 	left: 50%;
 	transform: translateX(-50%);
 }
@@ -42,22 +42,22 @@
 	margin-bottom: 15px;
 }
 .logincard_inputfield label {
-	font-size: 17px;
+	font-size: 15px;
 }
 .logincard_inputfield input {
 	outline: none;
 	padding: 10px;
-	font-size: 15px;
+	font-size: 13px;
 	border-radius: 5px;
 	border: 1px solid #000;
-	color: rgb(63, 62, 62);
+	color: #000;
 }
-.logincard button {
-	padding: 15px;
+.logincard .btn {
+	padding: 12px;
 	margin: 20px 0 10px;
 	background: black;
 	color: white;
-	font-size: 17px;
+	font-size: 15px;
 	outline: none;
 	border: none;
 	border-radius: 50px;
@@ -65,6 +65,7 @@
 	width: 100%;
 }
 .logincard p {
+	font-size: 14px;
 	text-align: center;
 }
 .logincard p > span {
